@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script>
+        
+    </script>
+  </head>
+  <body>
+    <h1>Quiz</h1>
+    <p>Welcome to quiz</p>
+    <ol>
+        <% questions.forEach(question=> { %>
+            <li>Question: <%= question.question %>, A: <%= question.A %>, B: <%= question.B %> C: <%= question.C %> D: <%= question.D %>
+            </li>
+            <% }); %>
+    </ol>
+  </body>
+</html>
