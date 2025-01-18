@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+h1 {
+  text-align: center;
+  margin-bottom: 5vh;
+}
+
+.quiz {
+  text-align: center;
+}

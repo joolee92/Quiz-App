@@ -1,20 +1,227 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Quiz App</title>
+    <title>Quiz</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <script>
-        
-    </script>
+    <script></script>
   </head>
   <body>
     <h1>Quiz</h1>
-    <p>Welcome to quiz</p>
-    <ol>
-        <% questions.forEach(question=> { %>
-            <li>Question: <%= question.question %>, A: <%= question.A %>, B: <%= question.B %> C: <%= question.C %> D: <%= question.D %>
-            </li>
-            <% }); %>
-    </ol>
+    <div class="quiz">
+      <form action="/quiz/results" method="POST">
+        <fieldset>
+          <legend>Question 1</legend>
+          <h3><%= questions[0].question %></h3>
+          <p>
+            <label for="q1a"><%= questions[0].A %></label>
+            <input type="radio" id="q1a" name="q1" value="A" required/>
+          </p>
+          <p>
+            <label for="q1b"><%= questions[0].B %></label>
+            <input type="radio" id="q1b" name="q1" value="B" required/>
+          </p>
+          <p>
+            <label for="q1c"><%= questions[0].C %></label>
+            <input type="radio" id="q1c" name="q1" value="C" required/>
+          </p>
+          <p>
+            <label for="q1d"><%= questions[0].D %></label>
+            <input type="radio" id="q1d" name="q1" value="D" required/>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Question 2</legend>
+          <h3><%= questions[1].question %></h3>
+          <p>
+            <label for="q2a"><%= questions[1].A %></label>
+            <input type="radio" id="q2a" name="q2" value="A" required/>
+          </p>
+          <p>
+            <label for="q2b"><%= questions[1].B %></label>
+            <input type="radio" id="q2b" name="q2" value="B" required/>
+          </p>
+          <p>
+            <label for="q2c"><%= questions[1].C %></label>
+            <input type="radio" id="q2c" name="q2" value="C" required/>
+          </p>
+          <p>
+            <label for="q2d"><%= questions[1].D %></label>
+            <input type="radio" id="q2d" name="q2" value="D" required/>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Question 3</legend>
+          <h3><%= questions[2].question %></h3>
+          <p>
+            <label for="q3a"><%= questions[2].A %></label>
+            <input type="radio" id="q3a" name="q3" value="A" required/>
+          </p>
+          <p>
+            <label for="q3b"><%= questions[2].B %></label>
+            <input type="radio" id="q3b" name="q3" value="B" />
+          </p>
+          <p>
+            <label for="q3c"><%= questions[2].C %></label>
+            <input type="radio" id="q3c" name="q3" value="C"/>
+          </p>
+          <p>
+            <label for="q3d"><%= questions[2].D %></label>
+            <input type="radio" id="q3d" name="q3" value="D"/>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Question 4</legend>
+          <h3><%= questions[3].question %></h3>
+          <p>
+            <label for="q4a"><%= questions[3].A %></label>
+            <input type="radio" id="q4a" name="q4" value="A" required/>
+          </p>
+          <p>
+            <label for="q4b"><%= questions[3].B %></label>
+            <input type="radio" id="q4b" name="q4" value="B"/>
+          </p>
+          <p>
+            <label for="q4c"><%= questions[3].C %></label>
+            <input type="radio" id="q4c" name="q4" value="C"/>
+          </p>
+          <p>
+            <label for="q4d"><%= questions[3].D %></label>
+            <input type="radio" id="q4d" name="q4" value="D"/>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Question 5</legend>
+          <h3><%= questions[4].question %></h3>
+          <p>
+            <label for="q5a"><%= questions[4].A %></label>
+            <input type="radio" id="q5a" name="q5" value="A" required/>
+          </p>
+          <p>
+            <label for="q5b"><%= questions[4].B %></label>
+            <input type="radio" id="q5b" name="q5" value="B"/>
+          </p>
+          <p>
+            <label for="q5c"><%= questions[4].C %></label>
+            <input type="radio" id="q5c" name="q5" value="C"/>
+          </p>
+          <p>
+            <label for="q5d"><%= questions[4].D %></label>
+            <input type="radio" id="q5d" name="q5" value="D"/>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Question 6</legend>
+          <h3><%= questions[5].question %></h3>
+          <p>
+            <label for="q6a"><%= questions[5].A %></label>
+            <input type="radio" id="q6a" name="q6" value="A" required/>
+          </p>
+          <p>
+            <label for="q6b"><%= questions[5].B %></label>
+            <input type="radio" id="q6b" name="q6" value="B"/>
+          </p>
+          <p>
+            <label for="q6c"><%= questions[5].C %></label>
+            <input type="radio" id="q6c" name="q6" value="C"/>
+          </p>
+          <p>
+            <label for="q6d"><%= questions[5].D %></label>
+            <input type="radio" id="q6d" name="q6" value="D"/>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Question 7</legend>
+          <h3><%= questions[6].question %></h3>
+          <p>
+            <label for="q7a"><%= questions[6].A %></label>
+            <input type="radio" id="q7a" name="q7" value="A" required/>
+          </p>
+          <p>
+            <label for="q7b"><%= questions[6].B %></label>
+            <input type="radio" id="q7b" name="q7" value="B"/>
+          </p>
+          <p>
+            <label for="q7c"><%= questions[6].C %></label>
+            <input type="radio" id="q7c" name="q7" value="C"/>
+          </p>
+          <p>
+            <label for="q7d"><%= questions[6].D %></label>
+            <input type="radio" id="q7d" name="q7" value="D"/>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Question 8</legend>
+          <h3><%= questions[7].question %></h3>
+          <p>
+            <label for="q8a"><%= questions[7].A %></label>
+            <input type="radio" id="q8a" name="q8" value="A" required/>
+          </p>
+          <p>
+            <label for="q8b"><%= questions[7].B %></label>
+            <input type="radio" id="q8b" name="q8" value="B"/>
+          </p>
+          <p>
+            <label for="q8c"><%= questions[7].C %></label>
+            <input type="radio" id="q8c" name="q8" value="C"/>
+          </p>
+          <p>
+            <label for="q8d"><%= questions[7].D %></label>
+            <input type="radio" id="q8d" name="q8" value="D"/>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Question 9</legend>
+          <h3><%= questions[8].question %></h3>
+          <p>
+            <label for="q9a"><%= questions[8].A %></label>
+            <input type="radio" id="q9a" name="q9" value="A" required/>
+          </p>
+          <p>
+            <label for="q9b"><%= questions[8].B %></label>
+            <input type="radio" id="q9b" name="q9" value="B"/>
+          </p>
+          <p>
+            <label for="q9c"><%= questions[8].C %></label>
+            <input type="radio" id="q9c" name="q9" value="C"/>
+          </p>
+          <p>
+            <label for="q9d"><%= questions[8].D %></label>
+            <input type="radio" id="q9d" name="q9" value="D"/>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Question 10</legend>
+          <h3><%= questions[9].question %></h3>
+          <p>
+            <label for="q10a"><%= questions[9].A %></label>
+            <input type="radio" id="q10a" name="q10" value="A" required/>
+          </p>
+          <p>
+            <label for="q10b"><%= questions[9].B %></label>
+            <input type="radio" id="q10b" name="q10" value="B"/>
+          </p>
+          <p>
+            <label for="q10c"><%= questions[9].C %></label>
+            <input type="radio" id="q10c" name="q10" value="C"/>
+          </p>
+          <p>
+            <label for="q10d"><%= questions[9].D %></label>
+            <input type="radio" id="q10d" name="q10" value="D"/>
+          </p>
+        </fieldset>
+        <p>
+          <button type="submit">Submit Answers</button>
+        </p>
+      </form>
+    </div>
   </body>
 </html>

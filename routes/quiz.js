@@ -2,6 +2,8 @@ var express = require("express");
 var router = express.Router();
 const fs = require("fs");
 const questionsFileName = "./questions/questions.json";
+let questions;
+let correct = 0;
 
 function readQuestionsDB() {
   let data = fs.readFileSync(questionsFileName, "utf-8");
@@ -19,7 +21,8 @@ function shuffle(array) {
 
     // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex],
+      array[randomIndex],
+      array[currentIndex],
     ];
   }
 }
@@ -27,8 +30,25 @@ function shuffle(array) {
 router.get("/", function (req, res, next) {
   let questionsList = readQuestionsDB();
   shuffle(questionsList);
-  let questions = questionsList.splice(0, 10);
+  questions = questionsList.splice(0, 10);
   res.render("quiz", { questions: questions });
+});
+
+router.get("/results", function (req, res, next) {
+  res.render("results", { correct: correct, });
+  console.log(correct);
+});
+
+router.post("/results", (req, res) => {
+  let answeredQuestions = JSON.parse(JSON.stringify(req.body));
+  let submittedAnswers = [];
+  submittedAnswers.push(...Object.values(answeredQuestions));
+  for (let i = 0; i < questions.length; i++) {
+    if (submittedAnswers[i] === questions[i].answer) {
+      correct++;
+    }
+  }
+  res.redirect("/quiz/results");
 });
 
 module.exports = router;
