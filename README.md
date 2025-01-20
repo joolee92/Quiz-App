@@ -5,3 +5,6 @@ Features:
 Server is run by typing 'node app.js' into the console
 
 Created by Joo Lee
+
+Video Demo:
+https://www.youtube.com/watch?v=YeC0pfP6fLo
