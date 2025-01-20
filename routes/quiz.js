@@ -28,6 +28,8 @@ function shuffle(array) {
 }
 
 router.get("/", function (req, res, next) {
+  correct = 0;
+  console.log(correct);
   let questionsList = readQuestionsDB();
   shuffle(questionsList);
   questions = questionsList.splice(0, 10);
