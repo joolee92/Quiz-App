@@ -9,7 +9,12 @@
     <main>
       <h3>You scored</h3>
       <h2><%= correct %>/10</h2>
-      <a href="/quiz">Play Again?</a>
+      <a href="/users/profile">Profile</a>
     </main>
+    <div>
+      <p id="delay">Wait 5 seconds to play again...</p>
+      <a id="restart" class="hide" href="/quiz">Restart</a>
+    </div>
+    <script src="/javascripts/script.js"></script>
   </body>
 </html>
